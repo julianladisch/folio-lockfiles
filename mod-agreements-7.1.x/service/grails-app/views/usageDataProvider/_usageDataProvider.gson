@@ -1,0 +1,20 @@
+import groovy.transform.*
+import org.olf.erm.UsageDataProvider
+
+@Field UsageDataProvider usageDataProvider
+
+inherits template: "/remoteOkapiLink/remoteOkapiLink"
+
+json {
+  if (usageDataProvider.usageDataProviderNote){
+    'usageDataProviderNote' usageDataProvider.usageDataProviderNote
+  }
+
+  if (params.controller == 'usageDataProvider') {
+    'owner' g.render( usageDataProvider.owner )
+  } else {
+    'owner' {
+      'id' usageDataProvider.owner.id
+    }
+  }
+}

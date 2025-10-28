@@ -1,0 +1,80 @@
+{
+    "header": {
+        "availability": {
+            "type": "general"
+        },
+        "packageProvider": {
+            "name": "JSTOR"
+        },
+        "packageSource": "kbplus",
+        "packageName": "Elsevier:Jisc Collections:Elsevier ScienceDirect Journals Agreement 2017-2021:Elsevier ScienceDirect Freedom Collection 2017-2021",
+        "startDate": "2015-01-01T00:00:00Z",
+        "endDate": "2030-10-10T00:00:00Z",
+        "packageSlug": "kbplus_1789"
+    },
+    "packageContents": [
+        {
+            "title": "ACC Current Journal Review",
+            "instanceMedium": "electronic",
+            "instanceMedia": "serial",
+            "instanceIdentifiers": [
+                {
+                    "value": "1062-1458",
+                    "namespace": "issn"
+                }
+            ],
+            "coverageNote": "transfer out (2006)",
+            "coverageDepth": "fulltext",
+            "url": "http://www.sciencedirect.com/science/journal/10621458",
+            "platformName": "ScienceDirect",
+            "monographEdition": null,
+            "monographVolume": null,
+            "firstEditor": null,
+            "dataMonographPublished": null,
+            "sourceIdentifierNamespace": "testElsevier",
+            "sourceIdentifier": "1234"
+        },
+        {
+            "title": "AEU - International Journal of Electronics and Communications",
+            "instanceMedium": "electronic",
+            "instanceMedia": "serial",
+            "instanceIdentifiers": [
+                {
+                    "value": "1434-8411",
+                    "namespace": "issn"
+                }
+            ],
+            "coverageNote": "",
+            "coverageDepth": "fulltext",
+            "url": "http://www.sciencedirect.com/science/journal/14348411",
+            "platformName": "ScienceDirect",
+            "monographEdition": null,
+            "monographVolume": null,
+            "firstEditor": null,
+            "dataMonographPublished": null,
+            "sourceIdentifierNamespace": "testElsevier",
+            "sourceIdentifier": "2345"
+        },
+        {
+            "title": "Information Security Technical Report",
+            "instanceMedium": "electronic",
+            "instanceMedia": "serial",
+            "instanceIdentifiers": [
+                {
+                    "value": "1363-4127",
+                    "namespace": "issn"
+                }
+            ],
+            "coverageNote": "now: Journal of Information Security and Applications (ISSN: 2214-2126; 2013- )",
+            "coverageDepth": "fulltext",
+            "url": "http://www.sciencedirect.com/science/journal/13634127",
+            "platformName": "ScienceDirect",
+            "monographEdition": null,
+            "monographVolume": null,
+            "firstEditor": null,
+            "dataMonographPublished": null,
+            "sourceIdentifierNamespace": "testElsevier",
+            "sourceIdentifier": "3456"
+        }
+    ]
+}

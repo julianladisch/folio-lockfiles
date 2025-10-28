@@ -1,0 +1,80 @@
+{
+    "header": {
+        "availability": {
+            "type": "general"
+        },
+        "packageProvider": {
+            "name": "JSTOR"
+        },
+        "packageSource": "kbplus",
+        "packageName": "JSTOR:Jisc Collections:Arts and Sciences II Collection:2018-2021",
+        "startDate": "2015-01-01T00:00:00Z",
+        "endDate": "2030-10-10T00:00:00Z",
+        "packageSlug": "kbplus_2096"
+    },
+    "packageContents": [
+        {
+            "title": "African Affairs",
+            "instanceMedium": "electronic",
+            "instanceMedia": "serial",
+            "instanceIdentifiers": [
+                {
+                    "value": "1468-2621",
+                    "namespace": "issn"
+                }
+            ],
+            "coverageNote": "previously: Journal of the Royal African Society (ISSN: 0368-4016) (1901-1944). Moving Wall: 5 years",
+            "coverageDepth": "fulltext",
+            "url": "https://www.jstor.org/journal/africanaffairs",
+            "platformName": "JSTOR",
+            "monographEdition": null,
+            "monographVolume": null,
+            "firstEditor": null,
+            "dataMonographPublished": null,
+            "sourceIdentifierNamespace": "testJSTORAS2",
+            "sourceIdentifier": "1234"
+        },
+        {
+            "title": "The Phylon Quarterly",
+            "instanceMedium": "electronic",
+            "instanceMedia": "serial",
+            "instanceIdentifiers": [
+                {
+                    "value": "0885-6826",
+                    "namespace": "issn"
+                }
+            ],
+            "coverageNote": "now: Phylon (1960-) (ISSN: 0031-8906). previously: Phylon (ISSN: 0885-6818) (1940-1956)",
+            "coverageDepth": "fulltext",
+            "url": "https://www.jstor.org/journal/phylonquarterly",
+            "platformName": "JSTOR",
+            "monographEdition": null,
+            "monographVolume": null,
+            "firstEditor": null,
+            "dataMonographPublished": null,
+            "sourceIdentifierNamespace": "testJSTORAS2",
+            "sourceIdentifier": "2345"
+        },
+        {
+            "title": "The Rand Journal of Economics",
+            "instanceMedium": "electronic",
+            "instanceMedia": "serial",
+            "instanceIdentifiers": [
+                {
+                    "value": "1756-2171",
+                    "namespace": "issn"
+                }
+            ],
+            "coverageNote": "Moving Wall: 2 Years",
+            "coverageDepth": "fulltext",
+            "url": "https://www.jstor.org/journal/randjeconomics",
+            "platformName": "JSTOR",
+            "monographEdition": null,
+            "monographVolume": null,
+            "firstEditor": null,
+            "dataMonographPublished": null,
+            "sourceIdentifierNamespace": "testJSTORAS2",
+            "sourceIdentifier": "3456"
+        }
+    ]
+}

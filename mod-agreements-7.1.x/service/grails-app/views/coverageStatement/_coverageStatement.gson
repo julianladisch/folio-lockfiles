@@ -1,0 +1,7 @@
+import org.olf.kb.CoverageStatement
+
+import groovy.transform.*
+
+@Field
+CoverageStatement coverageStatement
+json tmpl.'/abstractCoverageStatement/abstractCoverageStatement' (coverageStatement)

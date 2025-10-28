@@ -1,0 +1,76 @@
+import groovy.transform.*
+import org.olf.erm.SubscriptionAgreement
+import org.olf.erm.SubscriptionAgreementOrg
+import org.olf.erm.AlternateName
+
+@Field SubscriptionAgreement subscriptionAgreement
+
+/*
+ * to prevent expanding all entitlements (=items) for an agreement
+ * one can now set the "expandItems=false" query param
+ * default behaviour is "true"
+ */
+
+// We can start the pre-fetching of things we are going to need.
+final String objectProperty = 'orgsUuid_object'
+if ( controllerName == 'subscriptionAgreement' && actionName.toLowerCase() == 'show' ) {
+  // Prefetch the orgs.
+  subscriptionAgreement.orgs?.each { SubscriptionAgreementOrg sao ->
+    if(sao.org?.respondsTo(objectProperty)){
+      // Just invoke. We will deal with the return value later. This will start the fetching now in parallel threads.
+      sao.org.invokeMethod(objectProperty, null)
+    }
+  }
+}
+
+final def should_expand = [
+  'agreementType',
+  'renewalPriority',
+  'agreementStatus',
+  'reasonForClosure',
+  'isPerpetual',
+  'contentReviewNeeded',
+  'contacts',
+  'orgs',
+  'externalLicenseDocs',
+  'docs',
+  'supplementaryDocs',
+  'vendor',
+  'tags',
+  'periods',
+  'outwardRelationships',
+  'inwardRelationships',
+  'customProperties',
+  'agreementContentTypes'
+]
+if (controllerName != 'remoteLicenseLink' ) {
+  should_expand << 'linkedLicenses'
+}
+
+if ( controllerName != 'usageDataProvider' ) {
+  should_expand << 'usageDataProviders'
+}
+
+def expandItems = params.expandItems ?: false
+
+if ( ( controllerName == 'subscriptionAgreement' ) &&
+ ( ['save', 'show', 'edit', 'update'].contains(actionName) ) &&
+ ( expandItems == 'true') ) {
+    should_expand << 'items'
+}
+
+def altNames = subscriptionAgreement.alternateNames?.toSorted { AlternateName a, AlternateName b -> a.name <=> b.name } ?: []
+
+def excludes = ['alternateNames']
+excludes.addAll(params.list('excludes'))
+
+json g.render(subscriptionAgreement, [expand: should_expand, excludes: excludes]) {
+  cancellationDeadline subscriptionAgreement.cancellationDeadline
+
+  if (actionName.toLowerCase() == 'export' && subscriptionAgreement.respondsTo('getResourceList')) {
+    resources (g.render (template: '/export/results', model: [resources: (subscriptionAgreement.invokeMethod('getResourceList', null) ?: [])]))
+  }
+
+  alternateNames g.render(altNames)
+  version subscriptionAgreement.version
+}

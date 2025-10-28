@@ -1,0 +1,59 @@
+{
+    "header": {
+        "availability": {
+            "type": "general"
+        },
+        "packageProvider": {
+            "name": "JSTOR"
+        },
+        "packageSource": "kbplus",
+        "packageName": "JSTOR:Jisc Collections:Arts and Sciences I Collection:2018-2021",
+        "startDate": "2015-01-01T00:00:00Z",
+        "endDate": "2030-10-10T00:00:00Z",
+        "packageSlug": "kbplus_2093"
+    },
+    "packageContents": [
+        {
+            "title": "American Journal of Mathematics",
+            "instanceMedium": "electronic",
+            "instanceMedia": "serial",
+            "instanceIdentifiers": [
+                {
+                    "value": "1080-6377",
+                    "namespace": "issn"
+                }
+            ],
+            "coverageNote": "Moving Wall: 5 years",
+            "coverageDepth": "fulltext",
+            "url": "https://www.jstor.org/journal/amerjmath",
+            "platformName": "JSTOR",
+            "monographEdition": null,
+            "monographVolume": null,
+            "firstEditor": null,
+            "dataMonographPublished": null,
+            "sourceIdentifierNamespace": "testJSTORAS1",
+            "sourceIdentifier": "1234"
+        },
+        {
+            "title": "The Economic Bulletin",
+            "instanceMedium": "electronic",
+            "instanceMedia": "serial",
+            "instanceIdentifiers": [
+                {
+                    "value": "1536-1489",
+                    "namespace": "issn"
+                }
+            ],
+            "coverageNote": "now:The American economic review (ISSN:0002-8282)",
+            "coverageDepth": "fulltext",
+            "url": "https://www.jstor.org/journal/economicbulletin",
+            "platformName": "JSTOR",
+            "monographEdition": null,
+            "monographVolume": null,
+            "firstEditor": null,
+            "dataMonographPublished": null,
+            "sourceIdentifierNamespace": "testJSTORAS1",
+            "sourceIdentifier": "2345"
+        }
+    ]
+}

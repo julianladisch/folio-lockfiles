@@ -1,0 +1,13 @@
+import org.olf.kb.PackageContentItem
+
+import groovy.transform.*
+
+@Field
+PackageContentItem packageContentItem
+
+def should_expand = ['pkg', 'pti', 'coverage', 'embargo', 'tags']
+
+json g.render(packageContentItem, [expand: should_expand]) {
+  longName packageContentItem.longName
+  'class' PackageContentItem.name
+}

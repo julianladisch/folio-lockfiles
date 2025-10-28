@@ -1,0 +1,32 @@
+import org.olf.kb.TitleInstance
+
+import groovy.transform.*
+
+@Field
+TitleInstance titleInstance
+
+json g.render(titleInstance, [expand: ['type', 'publicationType', 'subType', 'coverage', 'tags', 'work'], excludes: ['identifiers', 'entitlements', 'relatedTitles']]) {
+  'class' TitleInstance.name
+  longName titleInstance.longName
+  
+  /* 
+   * For now we only fetch those identifierOccurrences for the TI with status "APPROVED",
+   * so there's no REAL need to expand status here, but we did in previous versions
+   * so keeping the same to avoid breaking change
+   */
+  identifiers (titleInstance.approvedIdentifierOccurrences) { IdentifierOccurrence occurrence ->
+    g.inline(occurrence, [excludes: ['resource', 'id'], expand: ['identifier', 'status']])
+  }
+
+  relatedTitles (titleInstance.relatedTitles) { TitleInstance relation ->
+    // Also render a minimal title instance for the relation
+    g.inline (relation, [includes: ['id', 'name', 'type', 'publicationType', 'subType'], expand: ['type', 'publicationType', 'subType']]) {
+      longName titleInstance.longName
+
+      // Make sure we only expand approvedIdentifiers on the relatedTitles as well
+      identifiers (relation.approvedIdentifierOccurrences) { IdentifierOccurrence occurrence ->
+        g.inline(occurrence, [excludes: ['resource', 'id'], expand: ['identifier', 'status']])
+      }
+    }
+  }
+}

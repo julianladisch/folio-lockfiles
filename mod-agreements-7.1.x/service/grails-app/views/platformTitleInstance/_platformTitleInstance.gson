@@ -1,0 +1,13 @@
+import org.olf.kb.PlatformTitleInstance
+
+import groovy.transform.*
+
+@Field PlatformTitleInstance platformTitleInstance
+
+def should_expand = ['titleInstance', 'platform', 'coverage', 'tags', 'templatedUrls']
+
+json g.render(platformTitleInstance, [expand: should_expand]) {
+  'class' PlatformTitleInstance.name
+  longName platformTitleInstance.longName
+}
+
